@@ -15,6 +15,6 @@ public class PuntoFocalPJ : MonoBehaviour
     private void RotacionPF()
     {
         float inputHorizontalPF = Input.GetAxis("Horizontal Punto Focal");
-        transform.Rotate(Vector3.up * inputHorizontalPF * velRotPuntoFocal);
+        transform.Rotate(Vector3.up * inputHorizontalPF * velRotPuntoFocal * Time.deltaTime);
     }
 }
