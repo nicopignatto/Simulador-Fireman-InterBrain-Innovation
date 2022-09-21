@@ -20,23 +20,68 @@ public class PJControlador : MonoBehaviour
 
     //variables privadas
     private RaycastHit rayoInteraccionObjetos;//esta variable determina de donde sale el raycast.
-    static private bool colisioneConItem;
+    static private bool colisioneConSombrero;
+    static private bool colisioneConGuantes;
+    static private bool colisioneConTraje;
+    static private bool colisioneConMochila;
 
-    static public bool ColisioneConItem
+    static public bool ColisioneConMochila
     {
         get
         {
-            return colisioneConItem;
+            return colisioneConMochila;
+        }
+
+        set
+        {
+            colisioneConMochila = value;
+        }
+    }
+
+    static public bool ColisioneConTraje
+    {
+        get
+        {
+            return colisioneConTraje;
+        }
+
+        set
+        {
+            colisioneConTraje = value;
+        }
+    }
+
+    static public bool ColisioneConGuantes
+    {
+        get
+        {
+            return colisioneConGuantes;
+        }
+
+        set
+        {
+            colisioneConGuantes = value;
+        }
+    }
+
+    static public bool ColisioneConSombrero
+    {
+        get
+        {
+            return colisioneConSombrero;
         }
         set
         {
-            colisioneConItem = value;
+            colisioneConSombrero = value;
         }
     }
 
     private void Start()
     {
-        colisioneConItem = false;   
+        colisioneConSombrero = false;
+        colisioneConGuantes = false;
+        colisioneConTraje = false;
+        colisioneConMochila = false;
     }
 
     private void Update()
@@ -65,14 +110,41 @@ public class PJControlador : MonoBehaviour
         Debug.DrawRay(rayoObjeto.transform.position, -puntoFocal.transform.right.normalized * tamañoRaycast, Color.red);
         if (Physics.Raycast(rayoObjeto.transform.position, -puntoFocal.transform.right.normalized, out rayoInteraccionObjetos, tamañoRaycast))
         {
-            if (rayoInteraccionObjetos.collider.CompareTag("Item Bombero") && Input.GetKey(KeyCode.E))
+            if (rayoInteraccionObjetos.collider.CompareTag("Item Bombero Sombrero") && Input.GetKey(KeyCode.E))
             {
-                colisioneConItem = true;
-                Debug.Log("Colisionaste con: " + rayoInteraccionObjetos.collider.tag);
+                colisioneConSombrero = true;
+                //Debug.Log("Colisionaste con: " + rayoInteraccionObjetos.collider.tag);
             }
             else
             {
-                colisioneConItem = false;
+                colisioneConSombrero = false;
+            }
+
+            if (rayoInteraccionObjetos.collider.CompareTag("Item Bombero Guantes") && Input.GetKey(KeyCode.E))
+            {
+                colisioneConGuantes = true;
+            }
+            else
+            {
+                colisioneConGuantes = false;
+            }
+
+            if (rayoInteraccionObjetos.collider.CompareTag("Item Bombero Traje") && Input.GetKey(KeyCode.E))
+            {
+                colisioneConTraje = true;
+            }
+            else
+            {
+                colisioneConTraje = false;
+            }
+
+            if (rayoInteraccionObjetos.collider.CompareTag("Item Bombero Mochila") && Input.GetKey(KeyCode.E))
+            {
+                colisioneConMochila = true;
+            }
+            else
+            {
+                colisioneConMochila = false;
             }
         }
 
