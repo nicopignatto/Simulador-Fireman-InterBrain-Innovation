@@ -115,36 +115,45 @@ public class PJControlador : MonoBehaviour
                 colisioneConSombrero = true;
                 //Debug.Log("Colisionaste con: " + rayoInteraccionObjetos.collider.tag);
             }
-            else
+            /*else
             {
                 colisioneConSombrero = false;
-            }
+            }*/
 
             if (rayoInteraccionObjetos.collider.CompareTag("Item Bombero Guantes") && Input.GetKey(KeyCode.E))
             {
                 colisioneConGuantes = true;
             }
-            else
+            /*else
             {
                 colisioneConGuantes = false;
-            }
+            }*/
 
             if (rayoInteraccionObjetos.collider.CompareTag("Item Bombero Traje") && Input.GetKey(KeyCode.E))
             {
                 colisioneConTraje = true;
             }
-            else
+            /*else
             {
                 colisioneConTraje = false;
-            }
+            }*/
 
             if (rayoInteraccionObjetos.collider.CompareTag("Item Bombero Mochila") && Input.GetKey(KeyCode.E))
             {
                 colisioneConMochila = true;
             }
-            else
+            /*else
             {
                 colisioneConMochila = false;
+            }*/
+
+            if (colisioneConSombrero && colisioneConGuantes && colisioneConTraje && ColisioneConMochila)
+            {
+                ControladorPasarNivel.ConseguiTodosLosItems = true;
+            }
+            else
+            {
+                ControladorPasarNivel.ConseguiTodosLosItems = false;
             }
         }
 

@@ -11,6 +11,7 @@ TagManager:
   - Item Bombero Guantes
   - Item Bombero Traje
   - Item Bombero Mochila
+  - Fuego
   layers:
   - Default
   - TransparentFX
