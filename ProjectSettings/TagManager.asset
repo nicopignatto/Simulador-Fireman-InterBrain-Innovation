@@ -12,6 +12,7 @@ TagManager:
   - Item Bombero Traje
   - Item Bombero Mochila
   - Fuego
+  - Agua
   layers:
   - Default
   - TransparentFX
