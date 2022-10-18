@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ComportFuego : MonoBehaviour
 {
+    [Header("Textura del fuego")]
+    [SerializeField] private Texture texturaFuego;
+
+
     [Header("Material del fuego al apagarse")]
     [SerializeField] private MeshRenderer mRendererFuego;
 
@@ -33,6 +37,7 @@ public class ComportFuego : MonoBehaviour
         if (vidaFuego <= 0)
         {
             mRendererFuego.material.color = Color.white;
+            mRendererFuego.material.mainTexture = texturaFuego;
             foreach (GameObject particulas in listaDeParticulasGameObjects)
             {
                 particulas.SetActive(false);

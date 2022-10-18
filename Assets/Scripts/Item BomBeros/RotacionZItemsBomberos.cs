@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotacionItemsBomberos : MonoBehaviour
+public class RotacionZItemsBomberos : MonoBehaviour
 {
     [Header("Vel. de rotación del Punto Focal")]
     [SerializeField] private float velRot = 65f;

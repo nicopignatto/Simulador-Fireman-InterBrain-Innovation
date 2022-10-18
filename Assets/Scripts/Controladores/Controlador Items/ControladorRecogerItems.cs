@@ -7,12 +7,20 @@ public class ControladorRecogerItems : MonoBehaviour
     [Header("Linkeos")]
     [SerializeField] private GameObject sombreroItemObjeto;//esta var. representa al objeto item del fireman
     [SerializeField] private GameObject sombreroObjPJ;//esta var. representa al objeto del PJ
-    [SerializeField] private GameObject guantesItemObjeto;
-    [SerializeField] private GameObject guantesObjPJ;
+    [SerializeField] private GameObject guantesItemObjeto;//esta var. representa al objeto item del fireman
+    [SerializeField] private GameObject guantesObjPJ;//esta var. representa al objeto del PJ
     [SerializeField] private GameObject trajeItemObjeto;
     [SerializeField] private GameObject trajeObjPJ;
     [SerializeField] private GameObject mochilaItemObjeto;
     [SerializeField] private GameObject mochilaObjPJ;
+
+    private void Start()
+    {
+        sombreroObjPJ.SetActive(false); 
+        guantesObjPJ.SetActive(false);
+        trajeObjPJ.SetActive(false);
+        mochilaObjPJ.SetActive(false);
+    }
 
     private void Update()
     {
