@@ -9738,6 +9738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eff15233166e5a42a4d61dea758a529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  texturaFuego: {fileID: 0}
   mRendererFuego: {fileID: 4228612764338737159}
   vidaFuego: 100
   listaDeParticulasGameObjects:

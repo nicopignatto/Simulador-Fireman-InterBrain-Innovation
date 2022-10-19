@@ -36,8 +36,8 @@ public class ComportFuego : MonoBehaviour
     {
         if (vidaFuego <= 0)
         {
-            mRendererFuego.material.color = Color.white;
             mRendererFuego.material.mainTexture = texturaFuego;
+            mRendererFuego.material.color = Color.clear;
             foreach (GameObject particulas in listaDeParticulasGameObjects)
             {
                 particulas.SetActive(false);
