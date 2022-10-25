@@ -23,7 +23,7 @@ public class MenuPrincipal : MonoBehaviour
     {
         //fadeOut.SetActive(true);
         //buttonClick.Play();
-        yield return new WaitForSeconds(1); //3.5f
+        yield return new WaitForSeconds(0); //3.5f
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -33,6 +33,6 @@ public class MenuPrincipal : MonoBehaviour
         //buttonClick.Play();
         yield return new WaitForSeconds(1); //3.5f
         Application.Quit();
-        Debug.Log("Quit");
+        //Debug.Log("Quit");
     }
 }
