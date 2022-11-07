@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: Assets/Escenas/Menu Principal.unity
     guid: de7a17b5a43c68c4a8d68c8728d7c142
   - enabled: 1
+    path: Assets/Escenas/Intro.unity
+    guid: 5002a76fd474610498abbd7140a3ec27
+  - enabled: 1
     path: Assets/Escenas/Nivel 1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Escenas/Entre Nivel 1 y 2.unity
+    guid: d810e71d8d20b30418c006de12af6d24
+  - enabled: 1
     path: Assets/Escenas/Nivel 2.unity
     guid: 585a14c90b15160418d6d79667adaf10
+  - enabled: 1
+    path: Assets/Escenas/Victoria.unity
+    guid: 22e7cb1766b7a194f812818978f28e33
   m_configObjects: {}
