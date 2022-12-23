@@ -17,6 +17,7 @@ public class ComportFuego : MonoBehaviour
     [Header("Linkeos")]
     [SerializeField] private List<GameObject> listaDeParticulasGameObjects;
 
+
     private void Update()
     {
         MuerteFuego();

@@ -25,6 +25,7 @@ public class PJControlador : MonoBehaviour
     static private bool colisioneConTraje;
     static private bool colisioneConMochila;
 
+
     static public bool ColisioneConMochila
     {
         get
