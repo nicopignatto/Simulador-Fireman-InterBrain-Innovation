@@ -13,6 +13,7 @@ TagManager:
   - Item Bombero Mochila
   - Fuego
   - Agua
+  - Objetivo
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Debug
   - 
   - 
   - 

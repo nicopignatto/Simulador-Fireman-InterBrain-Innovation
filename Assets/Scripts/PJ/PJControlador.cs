@@ -13,13 +13,22 @@ public class PJControlador : MonoBehaviour
     [Header("Tamaño de rayo/raycast de interaccion")]
     [SerializeField] private float tamañoRaycast;
 
+    /*[Header("Colores de los raycast")]
+    [SerializeField] private Color colorRaycast1;
+    [SerializeField] private Color colorRaycast2;*/
+    //para los colores se pueden serializar pero no sirve de nada,por que no funciona como debe.
+
+
     [Header("Linkeos")]
     [SerializeField] private Rigidbody rbPJ;
     [SerializeField] private GameObject puntoFocal;//esta variable representa al objeto del punto focal.
-    [SerializeField] private GameObject rayoObjeto;
+    [SerializeField] private GameObject rayoObjeto;//esta var. representa el punto de posicion en el que se encuentra el raycast de interaccion del jugador.
+    [SerializeField] private GameObject rayoDebug;
+    [SerializeField] private LayerMask capaColisionadoraDebug;
 
     //variables privadas
     private RaycastHit rayoInteraccionObjetos;//esta variable determina de donde sale el raycast.
+    private RaycastHit rayitoColisionadorDebug;//esta var. determina de donde sale el raycast de debug.Pero en este caso vamos a guardar al raycast en esta variable directamente.
     static private bool colisioneConSombrero;
     static private bool colisioneConGuantes;
     static private bool colisioneConTraje;
@@ -88,6 +97,7 @@ public class PJControlador : MonoBehaviour
     private void Update()
     {
         RayoInteractorItems();
+        //RayitoInteraccionador2Debug();//esta linea solo "descomenta" si queres probar teorias con un raycast aparte del que implementaste anteriormente.
     }
     private void FixedUpdate()
     {
@@ -108,7 +118,7 @@ public class PJControlador : MonoBehaviour
 
     private void RayoInteractorItems()
     {
-        Debug.DrawRay(rayoObjeto.transform.position, -puntoFocal.transform.right.normalized * tamañoRaycast, Color.red);
+        Debug.DrawRay(rayoObjeto.transform.position, -puntoFocal.transform.right.normalized * tamañoRaycast,Color.red);
         if (Physics.Raycast(rayoObjeto.transform.position, -puntoFocal.transform.right.normalized, out rayoInteraccionObjetos, tamañoRaycast))
         {
             if (rayoInteraccionObjetos.collider.CompareTag("Item Bombero Sombrero") && Input.GetKey(KeyCode.E))
@@ -158,5 +168,17 @@ public class PJControlador : MonoBehaviour
             }
         }
 
+    }
+
+    private void RayitoInteraccionador2Debug()
+    {
+        Debug.DrawRay(rayoDebug.transform.position, -puntoFocal.transform.right.normalized * tamañoRaycast, Color.green);
+        if (Physics.Raycast(rayoDebug.transform.position, -puntoFocal.transform.right.normalized,out rayitoColisionadorDebug,tamañoRaycast))
+        {
+            if (rayitoColisionadorDebug.collider.tag=="Objetivo")
+            {
+                Debug.Log("El raycast esta colisionando con el tag:" + rayitoColisionadorDebug.collider.tag);
+            }
+        }
     }
 }
